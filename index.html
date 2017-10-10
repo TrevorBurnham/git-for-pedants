@@ -6,14 +6,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
-	<style>
-		.slide::after {
-			display: none;
-		}
-		.slide h2 {
-			color: inherit;
-		}
-	</style>
+	<link rel="stylesheet" href="custom-styles.css">
 </head>
 <body class="shower list">
 
@@ -26,9 +19,6 @@
 		<h2>Git for Pedants</h2>
 		<figure>
 			<img class="cover" src="pictures/octocat-teacher.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
 		</figure>
 		<style>
 			#cover h2 {
@@ -50,159 +40,228 @@
 			<li class="next">Trevor Burnham, 5-year-old</li>
 			<li class="next">Yet another reboot of a long-forgotten franchise</li>
 			<li class="next">Because millennials</li>
-			<li class="next"><strong>Goal:</strong> 10% reduction in Stack Overflow traffic from HubSpot offices</li>
+			<li class="next"><strong>Goals for today:</strong><ol>
+				<li>Stack Overflow traffic <span style="color: red;">⬇</span></li>
+				<li>$HUBS <span style="color: green;">⬆</span></li>
+				<li class="next">Stave off loneliness 🙍🏻‍♂️</li>
+			</ol></li>
 		</ul>
 	</section>
 
 	<section class="slide">
-			<h2>Starting Out</h2>
-			<figure>
-				<img class="cover" src="pictures/baby-octopus.jpg">
-				<figcaption class="white">
-					<a href="http://fiftyfootshadows.net/">© John Carey</a>
-				</figcaption>
-			</figure>
-		</section>
-
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
-
-	<section class="slide">
-		<h2>Serious citations</h2>
+		<h2>Starting Out</h2>
 		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
+			<img class="cover" src="pictures/baby-octopus.jpg">
 		</figure>
 	</section>
 
 	<section class="slide">
-		<h2>Code samples</h2>
+		<h2>“I need to commit my changes…”</h2>
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="prompt">⚡</span> <span class="command next">git commit</span></code>
+			<div class="next">
+				<code><div class="output">On branch master
+Changes not staged for commit:
+				<span class="red">modified:   config.json</span>
+
+no changes added to commit</div></code>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
 		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+		<h2>“I need to <s>commit</s> stage my changes…”</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="prompt">⚡</span> <span class="command next">git stage config.json</span></code>
+			<div class="next"><code><div class="output">
+</div></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master⇡</span></code>
+			<code><span class="prompt">⚡</span></code>
+		</pre>
 	</section>
 
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
+	<section class="slide">
+		<h2>“Wait! Let me take that back…”</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="prompt">⚡</span> <span class="command next">git unstage config.json</span></code>
+			<div class="next">
+				<code><div class="output">git: 'unstage' is not a git command. See 'git --help'.
+
+The most similar command is
+			instaweb
+				</div></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master⇡</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>“Wait! Let me take that back…”</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="prompt">⚡</span> <span class="command next">git rm config.json</span></code>
+			<div class="next">
+				<code><div class="output">error: the following file has local modifications:
+		config.json
+(use --cached to keep the file, or -f to force removal)
+				</div></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>“Wait! Let me take that back…”</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git rm config.json -f</span></code>
+			<div class="next">
+				<code><div class="output">rm 'config.json'
+				</div></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
+			<img class="cover full-width" src="pictures/facepalm.png">
 		</figure>
 	</section>
 
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
+		<h2>Pop quiz!</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="prompt">⚡</span> <span class="command next">git reset config.json</span></code>
+			<div class="next">
+				<code><div class="output">Unstaged changes after reset:
+M       config.json
+				</div></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Inner navigation</h2>
+		<h2>Git’s 3 File Areas</h2>
 		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
+			<li><strong>Working Directory:</strong> Everything you see with <code>ls</code><ul class="next">
+				<li>(Except <code>.git/</code>)</li>
+				<li class="next">a.k.a. the working tree</li>
+			</ul></li>
 		</ol>
 	</section>
 
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
+	<section class="slide">
+		<h2>Burnham’s First Law of Git</h2>
+		<figure>
+			<blockquote>
+				<p>Every Git concept has at least two names that appear in the documentation.</p>
+			</blockquote>
+			<figcaption>—Popular aphorism widely attributed to Trevor Burnham</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Git’s 3 File Areas</h2>
+		<ol>
+			<li><strong>Working Directory:</strong> All the files currently in your project dir<ul>
+				<li>(Except <code>.git/</code>)</li>
+				<li>a.k.a. the working tree</li>
+			</ul></li>
+			<li class="next"><strong>Staging Area:</strong> All the files that will be in the next commit<ul>
+				<li class="next">a.k.a. the index</li>
+				<li class="next">“Empty Staging Area” == matches working tree</li>
+			</ul></li>
+			<li class="next"><strong>Branch Head Commit:</strong> All the files in the commit you’ve checked out<ul>
+				<li class="next">a.k.a. the snapshot</li>
+			</ul></li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout shrink">Commits aren’t diffs!</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Git’s Hash Addiction</h2>
+		<ul>
+			<li>Every version of a file (“blob”) has a hash<ul>
+				<li class="next"><code>Hash( File_Contents )</code></li>
+			</ul></li>
+			<li class="next">Every version of a directory (“tree”) is recursively hashed<ul>
+				<li class="next"><code>Hash( Blobs + File_Names + Trees + Dir_Names )</code></li>
+			</ul></li>
+			<li class="next">So <strong>what is a commit?</strong><ul>
+				<li class="next"><code>Root_Tree + Parent_Commit</code></li>
+				<li class="next"><code>  + Message + Author + Committer + Timestamps</code></li>
+			</ul></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>What You Should Really Be Worried About 🐺</h2>
+		<figure>
+			<blockquote>
+				<p>A SHA-1 collision is less likely than every member of your programming team being attacked and killed by wolves in unrelated incidents on the same night.</p>
+			</blockquote>
+			<figcaption>—Scott Chacon and Ben Straub in <a href="https://git-scm.com/book/">Pro Git</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Profound Implications</h2>
+		<ol>
+			<li>My commit <code>da39a3</code> is the same as your <code>da39a3</code>. <ul>
+				<li class="next">In fact, its <em>entire history</em> is the same!</li>
+			</ul></li>
+			<li class="next">Branches are dumb.<ul>
+				<li class="next">No magic, just a pointer. E.g.: <code>master</code> 👉🏻 <code>da39a3</code></li>
+			</ul></li>
+			<li class="next">You can recover any work you commit even if you delete the branch.<ul>
+				<li class="next">✨ <code>git reflog</code> ✨</li>
+				<li class="next">…For 30 days. Then 🚮</li>
+			</ul></li>
+		</ol>
+	</section>
+
+	<!-- TODO: Talk about how non-linear history leads to trouble, and how rebase -i is the COOLEST FEATURE -->
+
+	<section class="slide">
+		<figure>
+			<img class="cover full-width" src="pictures/sunglasses-cat.jpg">
+		</figure>
 	</section>
 
 	<section class="slide" id="see-more">
 		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
+				<img src="pictures/slack-mark.svg" alt=""> Slack me: <a style="background: none;">@tburnham</a>
 		</h2>
 		<style>
 			#see-more h2 {
-				font-size:100px
+				font-size: 90px
 				}
 			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
+				width: 2.5em;
+				height: 2.5em;
+				vertical-align: middle;
+				margin-bottom: 2%;
+				margin-right: -0.5em;
+			}
 		</style>
 	</section>
 
-	<footer class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</footer>
-
-	<div class="progress"></div>
-
 	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
-
 </body>
 </html>
