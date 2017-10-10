@@ -37,7 +37,7 @@
 	<section class="slide">
 		<h2>Who am I and what am I doing here?</h2>
 		<ul>
-			<li class="next">Trevor Burnham, 5-year-old</li>
+			<li>Trevor Burnham, 5-year-old</li>
 			<li class="next">Yet another reboot of a long-forgotten franchise</li>
 			<li class="next">Because millennials</li>
 			<li class="next"><strong>Goals for today:</strong><ol>
@@ -49,7 +49,7 @@
 	</section>
 
 	<section class="slide">
-		<h2>Starting Out</h2>
+		<h2>Staging</h2>
 		<figure>
 			<img class="cover" src="pictures/baby-octopus.jpg">
 		</figure>
@@ -80,7 +80,7 @@ no changes added to commit</div></code>
 			<code><span class="prompt">⚡</span> <span class="command next">git stage config.json</span></code>
 			<div class="next"><code><div class="output">
 </div></code>
-			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master⇡</span></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
 			<code><span class="prompt">⚡</span></code>
 		</pre>
 	</section>
@@ -88,7 +88,7 @@ no changes added to commit</div></code>
 	<section class="slide">
 		<h2>“Wait! Let me take that back…”</h2>
 		<pre>
-			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
 			<code><span class="prompt">⚡</span> <span class="command next">git unstage config.json</span></code>
 			<div class="next">
 				<code><div class="output">git: 'unstage' is not a git command. See 'git --help'.
@@ -96,7 +96,7 @@ no changes added to commit</div></code>
 The most similar command is
 			instaweb
 				</div></code>
-				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master⇡</span></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
 				<code><span class="prompt">⚡</span></code>
 			</div>
 		</pre>
@@ -105,14 +105,14 @@ The most similar command is
 	<section class="slide">
 		<h2>“Wait! Let me take that back…”</h2>
 		<pre>
-			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
 			<code><span class="prompt">⚡</span> <span class="command next">git rm config.json</span></code>
 			<div class="next">
 				<code><div class="output">error: the following file has local modifications:
 		config.json
 (use --cached to keep the file, or -f to force removal)
 				</div></code>
-				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
 				<code><span class="prompt">⚡</span></code>
 			</div>
 		</pre>
@@ -121,12 +121,12 @@ The most similar command is
 	<section class="slide">
 		<h2>“Wait! Let me take that back…”</h2>
 		<pre>
-			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git rm config.json -f</span></code>
 			<div class="next">
 				<code><div class="output">rm 'config.json'
 				</div></code>
-				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
 				<code><span class="prompt">⚡</span></code>
 			</div>
 		</pre>
@@ -154,9 +154,9 @@ M       config.json
 	</section>
 
 	<section class="slide">
-		<h2>Git’s 3 File Areas</h2>
+		<h2>Git’s Three File Trees</h2>
 		<ol>
-			<li><strong>Working Directory:</strong> Everything you see with <code>ls</code><ul class="next">
+			<li><strong>Working Directory:</strong> All the files currently in your project dir<ul class="next">
 				<li>(Except <code>.git/</code>)</li>
 				<li class="next">a.k.a. the working tree</li>
 			</ul></li>
@@ -174,7 +174,7 @@ M       config.json
 	</section>
 
 	<section class="slide">
-		<h2>Git’s 3 File Areas</h2>
+		<h2>Git’s Three File Trees</h2>
 		<ol>
 			<li><strong>Working Directory:</strong> All the files currently in your project dir<ul>
 				<li>(Except <code>.git/</code>)</li>
@@ -182,12 +182,28 @@ M       config.json
 			</ul></li>
 			<li class="next"><strong>Staging Area:</strong> All the files that will be in the next commit<ul>
 				<li class="next">a.k.a. the index</li>
-				<li class="next">“Empty Staging Area” == matches working tree</li>
 			</ul></li>
-			<li class="next"><strong>Branch Head Commit:</strong> All the files in the commit you’ve checked out<ul>
-				<li class="next">a.k.a. the snapshot</li>
+			<li class="next"><strong>Head Commit</strong>: All the files in the commit you’ve checked out<ul>
+				<li class="next">a.k.a. <code>HEAD</code></li>
+				<li class="next">“Empty Staging Area” == same tree as <code>HEAD</code></li>
 			</ul></li>
 		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Staging Area Commands</h2>
+		<ol style="font-size: 1.5em">
+			<li><code>git stage</code> = Working Tree ️➡️ Staging Area</li>
+			<li class="next"><code>git reset</code> = Head Commit ️➡️ Staging Area</li>
+			<li class="next"><code>git commit</code> = ️Staging Area ➡️ New Commit</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Commits</h2>
+		<figure>
+			<img class="cover" src="pictures/baby-octopus.jpg">
+		</figure>
 	</section>
 
 	<section class="slide">
@@ -197,16 +213,7 @@ M       config.json
 	<section class="slide">
 		<h2>Git’s Hash Addiction</h2>
 		<ul>
-			<li>Every version of a file (“blob”) has a hash<ul>
-				<li class="next"><code>Hash( File_Contents )</code></li>
-			</ul></li>
-			<li class="next">Every version of a directory (“tree”) is recursively hashed<ul>
-				<li class="next"><code>Hash( Blobs + File_Names + Trees + Dir_Names )</code></li>
-			</ul></li>
-			<li class="next">So <strong>what is a commit?</strong><ul>
-				<li class="next"><code>Root_Tree + Parent_Commit</code></li>
-				<li class="next"><code>  + Message + Author + Committer + Timestamps</code></li>
-			</ul></li>
+			<li><code>Hash( Input )</code>: A miracle function! 🙌🏻🤖🙌🏻</li>
 		</ul>
 	</section>
 
@@ -221,9 +228,32 @@ M       config.json
 	</section>
 
 	<section class="slide">
+		<h2>Git’s Hash Addiction</h2>
+		<ul>
+			<li><code>Hash( Input )</code>: A miracle function! 🙌🏻🤖🙌🏻</li>
+			<li>Every version of a file (“blob”) has a hash<ul>
+				<li class="next"><code>Hash( File_Contents )</code></li>
+			</ul></li>
+			<li class="next">Every version of a directory (“tree”) is recursively hashed<ul>
+				<li class="next"><code>Hash( Blobs + File_Names + Trees + Dir_Names )</code></li>
+			</ul></li>
+			<li class="next">So <strong>what is a commit?</strong><ul>
+				<li class="next"><code>Root_Tree + Parent_Commit</code></li>
+				<li class="next"><code>  + Message + Author + Committer + Timestamps</code></li>
+			</ul></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover full-width" src="pictures/sunglasses-cat.jpg">
+		</figure>
+	</section>
+
+	<section class="slide">
 		<h2>Profound Implications</h2>
 		<ol>
-			<li>My commit <code>da39a3</code> is the same as your <code>da39a3</code>. <ul>
+			<li>My commit <code>da39a3</code> is the same as your <code>da39a3</code>.<ul>
 				<li class="next">In fact, its <em>entire history</em> is the same!</li>
 			</ul></li>
 			<li class="next">Branches are dumb.<ul>
@@ -236,12 +266,113 @@ M       config.json
 		</ol>
 	</section>
 
-	<!-- TODO: Talk about how non-linear history leads to trouble, and how rebase -i is the COOLEST FEATURE -->
+	<section class="slide">
+		<h2>Tired: Commit With Inline Message 😪</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme+</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git commit -m "Add README"</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Wired: Verbose Commit 😎🤘🏻</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme+</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git commit -v</span></code>
+		</pre>
+	</section>
 
 	<section class="slide">
 		<figure>
-			<img class="cover full-width" src="pictures/sunglasses-cat.jpg">
+			<img class="cover window" src="pictures/verbose-commit-1.png">
 		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/verbose-commit-2.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/verbose-commit-3.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Merging</h2>
+		<figure>
+			<img class="cover" src="pictures/baby-octopus.jpg">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Merge When Base Branch Hasn’t Changed</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
+			<div class="next">
+				<code><div class="output">Updating 225a594..5508db7
+Fast-forward
+	README.md | 3 +++
+	1 file changed, 3 insertions(+)
+	create mode 100644 README.md</code></div>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Merge When Base Branch Has Changed</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
+			<div class="next">
+				<code><div class="output">Merge made by the 'recursive' strategy.
+README.md | 3 +++
+1 file changed, 3 insertions(+)
+create mode 100644 README.md</code></div>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/git-log-linear.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/git-log-graph.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/git-log-first-parent.png">
+		</figure>
+	</section>
+
+	<!-- TODO: Talk about rebasing -->
+
+	<section class="slide">
+		<h2>Closing Remarks</h2>
+		<ul>
+			<li>Git: The amazing VCS with the terrible CLI™<ul>
+					<li class="next"><code>reset</code>, <code>rebase</code>, <code>revert</code>, <code>remote</code>…</li>
+					<li class="next"><code>rerere</code>? Re-ally!</li>
+				</ul></li>
+			<li class="next">COMMITS AREN’T DIFFS!! 😡</li>
+			<li class="next">Use <code>git commit -v</code> as a time for tranquil reflection 🌳</li>
+			<li class="next">The commit log is a lie. 🎂</li>
+		</ul>
 	</section>
 
 	<section class="slide" id="see-more">

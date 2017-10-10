@@ -49,6 +49,9 @@
 .slide pre code .vcstatus {
   color: #009be5;
 }
+.slide .cover.window {
+  margin-top: 1%;
+}
 .slide .cover.full-width {
   max-height: none;
 }
