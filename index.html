@@ -49,7 +49,7 @@
 	</section>
 
 	<section class="slide">
-		<h2>Starting Out</h2>
+		<h2>Staging</h2>
 		<figure>
 			<img class="cover" src="pictures/baby-octopus.jpg">
 		</figure>
@@ -191,13 +191,20 @@ M       config.json
 	</section>
 
 	<section class="slide">
-			<h2>Staging and Unstaging</h2>
-			<ol style="font-size: 1.5em">
-				<li><code>git stage</code> = Working Tree ️➡️ Staging Area</li>
-				<li class="next"><code>git reset</code> = Head Commit ️➡️ Staging Area</li>
-				<li class="next"><code>git commit</code> = ️Staging Area ➡️ New Commit</li>
-			</ol>
-		</section>
+		<h2>Staging Area Commands</h2>
+		<ol style="font-size: 1.5em">
+			<li><code>git stage</code> = Working Tree ️➡️ Staging Area</li>
+			<li class="next"><code>git reset</code> = Head Commit ️➡️ Staging Area</li>
+			<li class="next"><code>git commit</code> = ️Staging Area ➡️ New Commit</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Commits</h2>
+		<figure>
+			<img class="cover" src="pictures/baby-octopus.jpg">
+		</figure>
+	</section>
 
 	<section class="slide">
 		<h2 class="shout shrink">Commits aren’t diffs!</h2>
@@ -207,7 +214,24 @@ M       config.json
 		<h2>Git’s Hash Addiction</h2>
 		<ul>
 			<li><code>Hash( Input )</code>: A miracle function! 🙌🏻🤖🙌🏻</li>
-			<li class="next">Every version of a file (“blob”) has a hash<ul>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>What You Should Really Be Worried About 🐺</h2>
+		<figure>
+			<blockquote>
+				<p>A SHA-1 collision is less likely than every member of your programming team being attacked and killed by wolves in unrelated incidents on the same night.</p>
+			</blockquote>
+			<figcaption>—Scott Chacon and Ben Straub in <a href="https://git-scm.com/book/">Pro Git</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Git’s Hash Addiction</h2>
+		<ul>
+			<li><code>Hash( Input )</code>: A miracle function! 🙌🏻🤖🙌🏻</li>
+			<li>Every version of a file (“blob”) has a hash<ul>
 				<li class="next"><code>Hash( File_Contents )</code></li>
 			</ul></li>
 			<li class="next">Every version of a directory (“tree”) is recursively hashed<ul>
@@ -221,12 +245,8 @@ M       config.json
 	</section>
 
 	<section class="slide">
-		<h2>What You Should Really Be Worried About 🐺</h2>
 		<figure>
-			<blockquote>
-				<p>A SHA-1 collision is less likely than every member of your programming team being attacked and killed by wolves in unrelated incidents on the same night.</p>
-			</blockquote>
-			<figcaption>—Scott Chacon and Ben Straub in <a href="https://git-scm.com/book/">Pro Git</a></figcaption>
+			<img class="cover full-width" src="pictures/sunglasses-cat.jpg">
 		</figure>
 	</section>
 
@@ -246,12 +266,113 @@ M       config.json
 		</ol>
 	</section>
 
-	<!-- TODO: Talk about how non-linear history leads to trouble, and how rebase -i is the COOLEST FEATURE -->
+	<section class="slide">
+		<h2>Tired: Commit With Inline Message 😪</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme+</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git commit -m "Add README"</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Wired: Verbose Commit 😎🤘🏻</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme+</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git commit -v</span></code>
+		</pre>
+	</section>
 
 	<section class="slide">
 		<figure>
-			<img class="cover full-width" src="pictures/sunglasses-cat.jpg">
+			<img class="cover window" src="pictures/verbose-commit-1.png">
 		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/verbose-commit-2.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/verbose-commit-3.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Merging</h2>
+		<figure>
+			<img class="cover" src="pictures/baby-octopus.jpg">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Merge When Base Branch Hasn’t Changed</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
+			<div class="next">
+				<code><div class="output">Updating 225a594..5508db7
+Fast-forward
+	README.md | 3 +++
+	1 file changed, 3 insertions(+)
+	create mode 100644 README.md</code></div>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Merge When Base Branch Has Changed</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
+			<div class="next">
+				<code><div class="output">Merge made by the 'recursive' strategy.
+README.md | 3 +++
+1 file changed, 3 insertions(+)
+create mode 100644 README.md</code></div>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/git-log-linear.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/git-log-graph.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/git-log-first-parent.png">
+		</figure>
+	</section>
+
+	<!-- TODO: Talk about rebasing -->
+
+	<section class="slide">
+		<h2>Closing Remarks</h2>
+		<ul>
+			<li>Git: The amazing VCS with the terrible CLI™<ul>
+					<li class="next"><code>reset</code>, <code>rebase</code>, <code>revert</code>, <code>remote</code>…</li>
+					<li class="next"><code>rerere</code>? Re-ally!</li>
+				</ul></li>
+			<li class="next">COMMITS AREN’T DIFFS!! 😡</li>
+			<li class="next">Use <code>git commit -v</code> as a time for tranquil reflection 🌳</li>
+			<li class="next">The commit log is a lie. 🎂</li>
+		</ul>
 	</section>
 
 	<section class="slide" id="see-more">
