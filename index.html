@@ -326,7 +326,7 @@ Fast-forward
 	</section>
 
 	<section class="slide">
-		<h2>Merge When Base Branch Has Changed</h2>
+		<h2>Merge When Base Branch Has Other Changes</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
@@ -340,6 +340,76 @@ create mode 100644 README.md</code></div>
 				<code><span class="prompt">⚡</span></code>
 			</div>
 		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Merge Conflict!</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
+			<div class="next">
+				<code><div class="output">Auto-merging README.md
+CONFLICT (add/add): Merge conflict in README.md
+Recorded preimage for 'README.md'
+Automatic merge failed; fix conflicts and then commit the result.
+				</code></div>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Merge Conflict!</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git stage README.md</span></code>
+			<div class="next">
+				<code><div class="output">
+				</code></div>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/vscode-merge-conflict.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/vscode-merge-resolved.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Merge Conflict!</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git stage README.md</span></code>
+			<div class="next">
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="prompt">⚡</span> <span class="command next">git commit -v</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/vscode-merge-commit.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Logging</h2>
+		<figure>
+			<img class="cover" src="pictures/baby-octopus.jpg">
+		</figure>
 	</section>
 
 	<section class="slide">
@@ -360,7 +430,7 @@ create mode 100644 README.md</code></div>
 		</figure>
 	</section>
 
-	<!-- TODO: Talk about rebasing -->
+	<!-- TODO: Talk about rebasing, esp. git rebase --ignore-date -->
 
 	<section class="slide">
 		<h2>Closing Remarks</h2>
@@ -389,6 +459,7 @@ create mode 100644 README.md</code></div>
 				vertical-align: middle;
 				margin-bottom: 2%;
 				margin-right: -0.5em;
+				margin-left: -0.5em;
 			}
 		</style>
 	</section>
