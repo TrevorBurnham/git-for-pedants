@@ -106,7 +106,7 @@ The most similar command is
 		<h2>“Wait! Let me take that back…”</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
-			<code><span class="prompt">⚡</span> <span class="command next">git rm config.json</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git rm config.json</span></code>
 			<div class="next">
 				<code><div class="output">error: the following file has local modifications:
 		config.json
@@ -156,42 +156,20 @@ M       config.json
 	<section class="slide">
 		<h2>Git’s Three File Trees</h2>
 		<ol>
-			<li><strong>Working Directory:</strong> All the files currently in your project dir<ul class="next">
+			<li><strong>Working Tree:</strong> All the files currently in your project dir<ul>
 				<li>(Except <code>.git/</code>)</li>
-				<li class="next">a.k.a. the working tree</li>
-			</ul></li>
-		</ol>
-	</section>
-
-	<section class="slide">
-		<h2>Burnham’s First Law of Git</h2>
-		<figure>
-			<blockquote>
-				<p>Every Git concept has at least two names that appear in the documentation.</p>
-			</blockquote>
-			<figcaption>—Popular aphorism widely attributed to Trevor Burnham</figcaption>
-		</figure>
-	</section>
-
-	<section class="slide">
-		<h2>Git’s Three File Trees</h2>
-		<ol>
-			<li><strong>Working Directory:</strong> All the files currently in your project dir<ul>
-				<li>(Except <code>.git/</code>)</li>
-				<li>a.k.a. the working tree</li>
 			</ul></li>
 			<li class="next"><strong>Staging Area:</strong> All the files that will be in the next commit<ul>
 				<li class="next">a.k.a. the index</li>
 			</ul></li>
 			<li class="next"><strong>Head Commit</strong>: All the files in the commit you’ve checked out<ul>
-				<li class="next">a.k.a. <code>HEAD</code></li>
 				<li class="next">“Empty Staging Area” == same tree as <code>HEAD</code></li>
 			</ul></li>
 		</ol>
 	</section>
 
 	<section class="slide">
-		<h2>Staging Area Commands</h2>
+		<h2>Copying Files Across Trees</h2>
 		<ol style="font-size: 1.5em">
 			<li><code>git stage</code> = Working Tree ️➡️ Staging Area</li>
 			<li class="next"><code>git reset</code> = Head Commit ️➡️ Staging Area</li>
@@ -301,6 +279,22 @@ M       config.json
 	</section>
 
 	<section class="slide">
+		<h2>Wired: Verbose Commit 😎🤘🏻</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme+</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git commit -v</span></code>
+			<div class="next">
+				<code><div class="output">[add-readme 6410f3d] Add README 📝
+1 file changed, 3 insertions(+), 0 deletions(-)
+create mode 100644 README.md</code></div>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<h2>Merging</h2>
 		<figure>
 			<img class="cover" src="pictures/baby-octopus.jpg">
@@ -343,7 +337,7 @@ create mode 100644 README.md</code></div>
 	</section>
 
 	<section class="slide">
-		<h2>Merge Conflict!</h2>
+		<h2>Merge Conflict! 😱</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
@@ -352,21 +346,6 @@ create mode 100644 README.md</code></div>
 CONFLICT (add/add): Merge conflict in README.md
 Recorded preimage for 'README.md'
 Automatic merge failed; fix conflicts and then commit the result.
-				</code></div>
-				<code><br /></code>
-				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
-				<code><span class="prompt">⚡</span></code>
-			</div>
-		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Merge Conflict!</h2>
-		<pre>
-			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
-			<code><span class="prompt">⚡</span> <span class="command">git stage README.md</span></code>
-			<div class="next">
-				<code><div class="output">
 				</code></div>
 				<code><br /></code>
 				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
@@ -388,10 +367,11 @@ Automatic merge failed; fix conflicts and then commit the result.
 	</section>
 
 	<section class="slide">
-		<h2>Merge Conflict!</h2>
+		<h2>Merge Conflict! 😱</h2>
 		<pre>
-			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git stage README.md</span></code>
+			<code><br /></code>
 			<div class="next">
 				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
 				<code><span class="prompt">⚡</span> <span class="command next">git commit -v</span></code>
@@ -403,6 +383,14 @@ Automatic merge failed; fix conflicts and then commit the result.
 		<figure>
 			<img class="cover window" src="pictures/vscode-merge-commit.png">
 		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Whew. That was easy.</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span></code>
+		</pre>
 	</section>
 
 	<section class="slide">
