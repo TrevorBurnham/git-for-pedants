@@ -1,0 +1,54 @@
+.shower.full .progress {
+  display: none;
+}
+.slide::after {
+  display: none;
+}
+.slide {
+  padding: 65px 100px;
+}
+.slide h2 {
+  color: inherit;
+}
+.slide blockquote {
+  margin-top: 15%;
+}
+.slide blockquote+figcaption {
+  color: #777;
+  font-weight: normal;
+  margin-left: 4%;
+}
+.slide pre {
+  background-color: #18181d;
+  border-radius: 5px;
+  height: 78%;
+  padding: 16px;
+  color: #d0d0d0;
+}
+.slide pre code {
+  font-family: Menlo;
+  line-height: 1.5;
+  max-width: 100%;
+  white-space: pre-wrap;
+  margin-left: 0;
+  padding-left: 0;
+  tab-size: 2;
+}
+.slide pre code:not(:only-child)::before {
+  display: none;
+}
+.slide pre code .prompt, .slide pre code .dir {
+  color: #f8fb3c;
+}
+.slide pre code .command {
+  color: #00da90;
+}
+.slide pre code .red {
+  color: #d1267f;
+}
+.slide pre code .vcstatus {
+  color: #009be5;
+}
+.slide .cover.full-width {
+  max-height: none;
+}
