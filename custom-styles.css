@@ -25,6 +25,14 @@
   padding: 16px;
   color: #d0d0d0;
 }
+.slide pre.small {
+  font-size: 0.75em;
+  height: 100%;
+}
+.slide pre.smaller {
+  font-size: 0.6em;
+  height: 100%;
+}
 .slide pre code {
   font-family: Menlo;
   line-height: 1.5;
@@ -45,6 +53,9 @@
 }
 .slide pre code .red {
   color: #d1267f;
+}
+.slide pre code .grey {
+  color: #999;
 }
 .slide pre code .vcstatus {
   color: #009be5;
