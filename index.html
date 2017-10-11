@@ -133,13 +133,7 @@ The most similar command is
 	</section>
 
 	<section class="slide">
-		<figure>
-			<img class="cover full-width" src="pictures/facepalm.png">
-		</figure>
-	</section>
-
-	<section class="slide">
-		<h2>Pop quiz!</h2>
+		<h2>Pop quiz! 👨🏻‍🏫</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
 			<code><span class="prompt">⚡</span> <span class="command next">git reset config.json</span></code>
@@ -150,6 +144,23 @@ M       config.json
 				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
 				<code><span class="prompt">⚡</span></code>
 			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/octocat-monster.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>We Were Warned 😨</h2>
+		<pre>
+			<code><div class="output"><span class="prompt">commit e83c5163316f89bfbde7d9ab23ca2e25604af29</span>
+Author: Linus Torvalds <torvalds@ppc970.osdl.org>
+Date: Thu Apr 7 15:13:13 2005 -0700
+Initial revision of "git", the information manager from hell
+			</div></code>
 		</pre>
 	</section>
 
@@ -320,6 +331,21 @@ Fast-forward
 	</section>
 
 	<section class="slide">
+		<h2>Fast-Forward Merge Diagram</h2>
+		<pre>
+			<code><span class="prompt"># Before merge</span></code>
+			<code>1--2--+         master
+			|
+			3--4      feature</code>
+			<code><br /></code>
+			<div class="next">
+				<code><span class="prompt"># After merge</span></code>
+				<code>1--2--3--4      master</code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<h2>Merge When Base Branch Has Other Changes</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
@@ -332,6 +358,25 @@ create mode 100644 README.md</code></div>
 				<code><br /></code>
 				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
 				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Three-Way Merge Diagram</h2>
+		<pre style="height: 85%">
+			<code><span class="prompt"># Before merge</span></code>
+			<code>1--2--3--4      master
+	 |
+	 +--5--6      feature</code>
+			<code><br /></code>
+			<div class="next">
+				<code><span class="prompt"># After merge</span></code>
+				<code>      3--4
+			|  |
+1--2--+  +--7   master
+			|  |
+			5--6</code>
 			</div>
 		</pre>
 	</section>
@@ -372,9 +417,9 @@ Automatic merge failed; fix conflicts and then commit the result.
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git stage README.md</span></code>
 			<code><br /></code>
-			<div class="next">
+			<div>
 				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
-				<code><span class="prompt">⚡</span> <span class="command next">git commit -v</span></code>
+				<code><span class="prompt">⚡</span> <span class="command">git commit -v</span></code>
 			</div>
 		</pre>
 	</section>
