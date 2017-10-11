@@ -106,7 +106,7 @@ The most similar command is
 		<h2>“Wait! Let me take that back…”</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
-			<code><span class="prompt">⚡</span> <span class="command next">git rm config.json</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git rm config.json</span></code>
 			<div class="next">
 				<code><div class="output">error: the following file has local modifications:
 		config.json
@@ -133,13 +133,7 @@ The most similar command is
 	</section>
 
 	<section class="slide">
-		<figure>
-			<img class="cover full-width" src="pictures/facepalm.png">
-		</figure>
-	</section>
-
-	<section class="slide">
-		<h2>Pop quiz!</h2>
+		<h2>Pop quiz! 👨🏻‍🏫</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
 			<code><span class="prompt">⚡</span> <span class="command next">git reset config.json</span></code>
@@ -154,44 +148,48 @@ M       config.json
 	</section>
 
 	<section class="slide">
-		<h2>Git’s Three File Trees</h2>
-		<ol>
-			<li><strong>Working Directory:</strong> All the files currently in your project dir<ul class="next">
-				<li>(Except <code>.git/</code>)</li>
-				<li class="next">a.k.a. the working tree</li>
-			</ul></li>
-		</ol>
-	</section>
-
-	<section class="slide">
-		<h2>Burnham’s First Law of Git</h2>
 		<figure>
-			<blockquote>
-				<p>Every Git concept has at least two names that appear in the documentation.</p>
-			</blockquote>
-			<figcaption>—Popular aphorism widely attributed to Trevor Burnham</figcaption>
+			<img class="cover" src="pictures/octocat-monster.png">
 		</figure>
 	</section>
 
 	<section class="slide">
+		<h2>We Were Warned 😨</h2>
+		<pre>
+			<code><div class="output"><span class="prompt">commit e83c5163316f89bfbde7d9ab23ca2e25604af29</span>
+Author: Linus Torvalds <torvalds@ppc970.osdl.org>
+Date: Thu Apr 7 15:13:13 2005 -0700
+Initial revision of "git", the information manager from hell
+			</div></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Too Many “re”s 😖</h2>
+		<ul>
+			<li><code>reset</code></li>
+			<li class="next"><code>rebase</code></li>
+			<li class="next"><code>revert</code></li>
+			<li class="next"><code>remote</code></li>
+			<li class="next"><code>rerere</code>⁉️</li>
+		</ul>
+	</section>
+
+	<section class="slide">
 		<h2>Git’s Three File Trees</h2>
 		<ol>
-			<li><strong>Working Directory:</strong> All the files currently in your project dir<ul>
+			<li><strong>Working Tree:</strong> All the files currently in your project dir<ul>
 				<li>(Except <code>.git/</code>)</li>
-				<li>a.k.a. the working tree</li>
 			</ul></li>
 			<li class="next"><strong>Staging Area:</strong> All the files that will be in the next commit<ul>
 				<li class="next">a.k.a. the index</li>
 			</ul></li>
-			<li class="next"><strong>Head Commit</strong>: All the files in the commit you’ve checked out<ul>
-				<li class="next">a.k.a. <code>HEAD</code></li>
-				<li class="next">“Empty Staging Area” == same tree as <code>HEAD</code></li>
-			</ul></li>
+			<li class="next"><strong>Head Commit</strong>: All the files in the commit you’ve checked out</li>
 		</ol>
 	</section>
 
 	<section class="slide">
-		<h2>Staging Area Commands</h2>
+		<h2>Copying Files Across Trees</h2>
 		<ol style="font-size: 1.5em">
 			<li><code>git stage</code> = Working Tree ️➡️ Staging Area</li>
 			<li class="next"><code>git reset</code> = Head Commit ️➡️ Staging Area</li>
@@ -267,6 +265,13 @@ M       config.json
 	</section>
 
 	<section class="slide">
+			<figure>
+				<img class="cover" src="pictures/octocat-superman.jpg" style="max-height: 80%; margin-left: -3%">
+			</figure>
+		</section>
+
+
+	<section class="slide">
 		<h2>Tired: Commit With Inline Message 😪</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme+</span></code>
@@ -301,6 +306,22 @@ M       config.json
 	</section>
 
 	<section class="slide">
+		<h2>Wired: Verbose Commit 😎🤘🏻</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme+</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git commit -v</span></code>
+			<div class="next">
+				<code><div class="output">[add-readme 6410f3d] Add README 📝
+1 file changed, 3 insertions(+), 0 deletions(-)
+create mode 100644 README.md</code></div>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<h2>Merging</h2>
 		<figure>
 			<img class="cover" src="pictures/baby-octopus.jpg">
@@ -319,8 +340,23 @@ Fast-forward
 	1 file changed, 3 insertions(+)
 	create mode 100644 README.md</code></div>
 				<code><br /></code>
-				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
 				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Fast-Forward Merge Diagram</h2>
+		<pre>
+			<code><span class="prompt"># Before merge</span></code>
+			<code>1--2--+         master
+			|
+			3--4      feature</code>
+			<code><br /></code>
+			<div class="next">
+				<code><span class="prompt"># After merge</span></code>
+				<code>1--2--3--4      master</code>
 			</div>
 		</pre>
 	</section>
@@ -336,14 +372,33 @@ README.md | 3 +++
 1 file changed, 3 insertions(+)
 create mode 100644 README.md</code></div>
 				<code><br /></code>
-				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
 				<code><span class="prompt">⚡</span></code>
 			</div>
 		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Merge Conflict!</h2>
+		<h2>Three-Way Merge Diagram</h2>
+		<pre style="height: 85%">
+			<code><span class="prompt"># Before merge</span></code>
+			<code>1--2--3--4      master
+	 |
+	 +--5--6      feature</code>
+			<code><br /></code>
+			<div class="next">
+				<code><span class="prompt"># After merge</span></code>
+				<code>      3--4
+			|  |
+1--2--+  +--7   master
+			|  |
+			5--6</code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Merge Conflict! 😱</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
@@ -352,21 +407,6 @@ create mode 100644 README.md</code></div>
 CONFLICT (add/add): Merge conflict in README.md
 Recorded preimage for 'README.md'
 Automatic merge failed; fix conflicts and then commit the result.
-				</code></div>
-				<code><br /></code>
-				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
-				<code><span class="prompt">⚡</span></code>
-			</div>
-		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Merge Conflict!</h2>
-		<pre>
-			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
-			<code><span class="prompt">⚡</span> <span class="command">git stage README.md</span></code>
-			<div class="next">
-				<code><div class="output">
 				</code></div>
 				<code><br /></code>
 				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
@@ -388,13 +428,14 @@ Automatic merge failed; fix conflicts and then commit the result.
 	</section>
 
 	<section class="slide">
-		<h2>Merge Conflict!</h2>
+		<h2>Merge Conflict! 😱</h2>
 		<pre>
-			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git stage README.md</span></code>
-			<div class="next">
+			<code><br /></code>
+			<div>
 				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
-				<code><span class="prompt">⚡</span> <span class="command next">git commit -v</span></code>
+				<code><span class="prompt">⚡</span> <span class="command">git commit -v</span></code>
 			</div>
 		</pre>
 	</section>
@@ -406,6 +447,14 @@ Automatic merge failed; fix conflicts and then commit the result.
 	</section>
 
 	<section class="slide">
+		<h2>Whew. That was easy.</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<h2>Logging</h2>
 		<figure>
 			<img class="cover" src="pictures/baby-octopus.jpg">
@@ -413,35 +462,215 @@ Automatic merge failed; fix conflicts and then commit the result.
 	</section>
 
 	<section class="slide">
+		<pre class="smaller">
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git log</span></code>
+			<code><div class="output">commit 58f8e13aab2a9a3da09c2ea871e46e64e8984bcf (HEAD -> master)
+Merge: d88127c 5508db7
+Author: Trevor Burnham &lt;tburnham@hubspot.com&gt;
+Date:   Tue Oct 10 10:58:01 2017 -0400
+
+		Merge branch 'refactor-stuff'
+
+commit d88127cf31fdae98e1962dec3ae3f2b253915d79
+Author: Fake Name McGee &lt;fakename@mc.gee&gt;
+Date:   Tue Oct 10 10:57:52 2017 -0400
+
+		Totally harmless commit, I promise! 😇🤞🏻
+
+<span class="grey">##################### Several pages later #####################</span>
+
+commit 5508db7c1fbd04f06d873a0e03e99d929c45561b (refactor-stuff)
+Author: Trevor Burnham &lt;tburnham@hubspot.com&gt;
+Date:   Fri Sep 1 7:52:20 2017 -0400
+
+		Refactor to reduce number of zeros (ones compress better)
+			</code></div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<pre class="smaller">
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git log --graph</span></code>
+			<code><div class="output">*   commit 58f8e13aab2a9a3da09c2ea871e46e64e8984bcf (HEAD -> master)
+|\  Merge: d88127c 5508db7
+| | Author: Trevor Burnham &lt;tburnham@hubspot.com&gt;
+| | Date:   Tue Oct 10 10:58:01 2017 -0400
+| |
+| | 		Merge branch 'refactor-stuff'
+| |
+| | commit 5508db7c1fbd04f06d873a0e03e99d929c45561b (refactor-stuff)
+| | Author: Trevor Burnham &lt;tburnham@hubspot.com&gt;
+| | Date:   Fri Sep 1 7:52:20 2017 -0400
+| |
+| | 		Refactor to reduce number of zeros (ones compress better)
+| |
+* | commit d88127cf31fdae98e1962dec3ae3f2b253915d79
+|/  Author: Fake Name McGee &lt;fakename@mc.gee&gt;
+|   Date:   Tue Oct 10 10:57:52 2017 -0400
+|
+| 	Totally harmless commit, I promise! 😇🤞🏻
+			</code></div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Rebasing</h2>
 		<figure>
-			<img class="cover window" src="pictures/git-log-linear.png">
+			<img class="cover" src="pictures/baby-octopus.jpg">
 		</figure>
 	</section>
 
 	<section class="slide">
-		<figure>
-			<img class="cover window" src="pictures/git-log-graph.png">
-		</figure>
+			<figure>
+				<img class="cover" src="pictures/yolo.png" style="max-height: 70%;">
+			</figure>
+		</section>
+
+	<section class="slide">
+		<h2>Rebase Before Merge</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">refactor-stuff</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git rebase master</span></code>
+			<code><div class="output">First, rewinding head to replay your work on top of it...
+Applying: Totally harmless commit, I promise! 😇🤞🏻
+			</code></div>
+		</pre>
 	</section>
 
 	<section class="slide">
-		<figure>
-			<img class="cover window" src="pictures/git-log-first-parent.png">
-		</figure>
+		<h2>Rebase Before Merge</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">refactor-stuff</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git checkout master</span></code>
+			<code><div class="output">Switched to branch 'master'
+			</div></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git merge refactor-stuff</span></code>
+			<code><div class="output">Updating 225a594..f79c4b7
+Fast-forward
+	app.js | 537 +++
+	1 file changed, 537 insertions(+)
+			</code></div>
+		</pre>
 	</section>
 
-	<!-- TODO: Talk about rebasing, esp. git rebase --ignore-date -->
+	<section class="slide">
+		<pre class="small">
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git log</span></code>
+			<code><div class="output">commit f79c4b7c1fbd04f06d873a0e03e99d929c45561b (refactor-stuff)
+Author: Trevor Burnham &lt;tburnham@hubspot.com&gt;
+Date:   Fri Sep 1 7:52:20 2017 -0400
+
+		Refactor to reduce number of zeros (ones compress better)
+
+commit d88127cf31fdae98e1962dec3ae3f2b253915d79
+Author: Fake Name McGee &lt;fakename@mc.gee&gt;
+Date:   Tue Oct 10 10:57:52 2017 -0400
+
+		Totally harmless commit, I promise! 😇🤞🏻
+			</code></div>
+		</pre>
+	</section>
 
 	<section class="slide">
-		<h2>Closing Remarks</h2>
+		<pre class="small">
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git log --format=fuller</span></code>
+			<code><div class="output">commit f79c4b7c1fbd04f06d873a0e03e99d929c45561b (refactor-stuff)
+Author:     Trevor Burnham &lt;tburnham@hubspot.com&gt;
+AuthorDate: Fri Sep 1 7:52:20 2017 -0400
+Committer:  Trevor Burnham &lt;tburnham@hubspot.com&gt;
+CommitDate: Tue Oct 10 10:58:01 2017 -0400
+
+		Refactor to reduce number of zeros (ones compress better)
+
+commit d88127cf31fdae98e1962dec3ae3f2b253915d79
+Author:     Fake Name McGee &lt;fakename@mc.gee&gt;
+AuthorDate: Tue Oct 10 10:57:52 2017 -0400
+Commiter:   Fake Name McGee &lt;fakename@mc.gee&gt;
+CommitDate: Tue Oct 10 10:57:52 2017 -0400
+
+		Totally harmless commit, I promise! 😇🤞🏻
+			</code></div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Rebase And Reset Timestamps Before Merge</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">refactor-stuff</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git rebase master --ignore-date</span></code>
+			<code><div class="output">First, rewinding head to replay your work on top of it...
+Applying: Totally harmless commit, I promise! 😇🤞🏻
+			</code></div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Rebase And Reset Timestamps Before Merge</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">refactor-stuff</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git checkout master</span></code>
+			<code><div class="output">Switched to branch 'master'
+			</div></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git merge refactor-stuff</span></code>
+			<code><div class="output">Updating 225a594..a21cfb7
+Fast-forward
+	app.js | 537 +++
+	1 file changed, 537 insertions(+)
+			</code></div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<pre class="small">
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git log</span></code>
+			<code><div class="output">commit a21cfb7c1fbd04f06d873a0e03e99d929c45561b (refactor-stuff)
+Author:     Trevor Burnham &lt;tburnham@hubspot.com&gt;
+AuthorDate: Tue Oct 10 10:58:01 2017 -0400
+Committer:  Trevor Burnham &lt;tburnham@hubspot.com&gt;
+CommitDate: Tue Oct 10 10:58:01 2017 -0400
+
+		Refactor to reduce number of zeros (ones compress better)
+
+commit d88127cf31fdae98e1962dec3ae3f2b253915d79
+Author:     Fake Name McGee &lt;fakename@mc.gee&gt;
+AuthorDate: Tue Oct 10 10:57:52 2017 -0400
+Commiter:   Fake Name McGee &lt;fakename@mc.gee&gt;
+CommitDate: Tue Oct 10 10:57:52 2017 -0400
+
+		Totally harmless commit, I promise! 😇🤞🏻
+			</code></div>
+		</pre>
+	</section>
+
+	<section class="slide">
+			<h2>Conclusion</h2>
+			<figure>
+				<img class="cover" src="pictures/baby-octopus.jpg">
+			</figure>
+		</section>
+
+	<section class="slide">
+		<h2>All The Handy Tips In One Slide</h2>
 		<ul>
-			<li>Git: The amazing VCS with the terrible CLI™<ul>
-					<li class="next"><code>reset</code>, <code>rebase</code>, <code>revert</code>, <code>remote</code>…</li>
-					<li class="next"><code>rerere</code>? Re-ally!</li>
-				</ul></li>
-			<li class="next">COMMITS AREN’T DIFFS!! 😡</li>
-			<li class="next">Use <code>git commit -v</code> as a time for tranquil reflection 🌳</li>
-			<li class="next">The commit log is a lie. 🎂</li>
+			<li><code>git commit -m</code>? Where’s the fire, buddy? 👨🏻‍🚒<ul>
+				<li>Use <code>git commit -v</code> as a time for tranquil reflection. 🌳</li>
+			</ul></li>
+			<li class="next"><code>git merge</code> <em>all</em> those commits? 🐞<ul>
+				<li>Use <code>git merge --no-ff</code> to keep them under one umbrella. ☂️</li>
+			</ul></li>
+			<li class="next"><code>git log</code> is a lie. 🎂<ul>
+				<li>Use <code>git log --graph</code> to see the whole picture! 📈</li>
+			</ul></li>
+			<li class="next"><code>git rebase</code> leaves commit timestamps out of sorts. 🔁<ul>
+				<li>Use <code>git rebase --ignore-dates</code> to get them in order! 👌🏻</li>
+			</ul></li>
 		</ul>
 	</section>
 
