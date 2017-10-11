@@ -86,6 +86,18 @@ no changes added to commit</div></code>
 	</section>
 
 	<section class="slide">
+		<h2>“I need to <s>commit</s> stage my changes…”</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git add config.json</span></code>
+			<div><code><div class="output">
+</div></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
+			<code><span class="prompt">⚡</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<h2>“Wait! Let me take that back…”</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
@@ -135,7 +147,7 @@ The most similar command is
 	<section class="slide">
 		<h2>Pop quiz! 👨🏻‍🏫</h2>
 		<pre>
-			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master*</span></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master+</span></code>
 			<code><span class="prompt">⚡</span> <span class="command next">git reset config.json</span></code>
 			<div class="next">
 				<code><div class="output">Unstaged changes after reset:
@@ -165,13 +177,15 @@ Initial revision of "git", the information manager from hell
 	</section>
 
 	<section class="slide">
-		<h2>Too Many “re”s 😖</h2>
+		<h2>For What Possible Reason But Torment? 😖</h2>
 		<ul>
-			<li><code>reset</code></li>
-			<li class="next"><code>rebase</code></li>
-			<li class="next"><code>revert</code></li>
-			<li class="next"><code>remote</code></li>
-			<li class="next"><code>rerere</code>⁉️</li>
+			<li><code>re</code>- commands: <ul>
+				<li class="next"><code>reset</code></li>
+				<li class="next"><code>rebase</code></li>
+				<li class="next"><code>revert</code></li>
+				<li class="next"><code>remote</code></li>
+				<li class="next"><code>rerere</code>⁉️</li>
+			</ul></li>
 		</ul>
 	</section>
 
@@ -310,14 +324,12 @@ Initial revision of "git", the information manager from hell
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme+</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git commit -v</span></code>
-			<div class="next">
-				<code><div class="output">[add-readme 6410f3d] Add README 📝
+			<code><div class="output">[add-readme 6410f3d] Add README 📝
 1 file changed, 3 insertions(+), 0 deletions(-)
 create mode 100644 README.md</code></div>
-				<code><br /></code>
-				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme</span></code>
-				<code><span class="prompt">⚡</span></code>
-			</div>
+			<code><br /></code>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme</span></code>
+			<code><span class="prompt">⚡</span></code>
 		</pre>
 	</section>
 
@@ -329,7 +341,7 @@ create mode 100644 README.md</code></div>
 	</section>
 
 	<section class="slide">
-		<h2>Merge When Base Branch Hasn’t Changed</h2>
+		<h2>Merge Into Unchanged Base Branch</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
@@ -350,27 +362,70 @@ Fast-forward
 		<h2>Fast-Forward Merge Diagram</h2>
 		<pre>
 			<code><span class="prompt"># Before merge</span></code>
-			<code>1--2--+         master
-			|
-			3--4      feature</code>
+			<code>1--2            master
+
+1--2--3--4      feature</code>
 			<code><br /></code>
 			<div class="next">
 				<code><span class="prompt"># After merge</span></code>
+				<code><br /></code>
 				<code>1--2--3--4      master</code>
 			</div>
 		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Merge When Base Branch Has Other Changes</h2>
+		<h2>Merge Into Unchanged Base Branch II</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme --no-ff</span></code>
+			<div class="next">
+				<code><div class="output">Merge made by the 'recursive' strategy.
+ README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md</code></div>
+				<code><br /></code>
+				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
+				<code><span class="prompt">⚡</span></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>No Fast-Forward Merge Diagram</h2>
+		<pre style="height: 85%">
+			<code><span class="prompt"># Before merge</span></code>
+			<code>1--2            master
+
+1--2--3--4      feature</code>
+			<code><br /></code>
+			<div class="next">
+				<code><span class="prompt"># After merge</span></code>
+				<code><br /></code>
+				<code>1--2--+--+--5   master
+			|  |
+			3--4
+				</code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/github-merge-default.png" style="max-width: 80%;">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Merge Into Base With New Commits</h2>
 		<pre>
 			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
 			<code><span class="prompt">⚡</span> <span class="command">git merge add-readme</span></code>
 			<div class="next">
 				<code><div class="output">Merge made by the 'recursive' strategy.
-README.md | 3 +++
-1 file changed, 3 insertions(+)
-create mode 100644 README.md</code></div>
+ README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md</code></div>
 				<code><br /></code>
 				<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">master</span></code>
 				<code><span class="prompt">⚡</span></code>
@@ -383,16 +438,15 @@ create mode 100644 README.md</code></div>
 		<pre style="height: 85%">
 			<code><span class="prompt"># Before merge</span></code>
 			<code>1--2--3--4      master
-	 |
-	 +--5--6      feature</code>
+
+1--2--5--6      feature</code>
 			<code><br /></code>
 			<div class="next">
 				<code><span class="prompt"># After merge</span></code>
-				<code>      3--4
-			|  |
-1--2--+  +--7   master
-			|  |
-			5--6</code>
+				<code><br /></code>
+				<code>1--2--3--4--7   master
+	 |        |
+	 5--------6</code>
 			</div>
 		</pre>
 	</section>
@@ -455,7 +509,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 	</section>
 
 	<section class="slide">
-		<h2>Logging</h2>
+		<h2>History</h2>
 		<figure>
 			<img class="cover" src="pictures/baby-octopus.jpg">
 		</figure>
@@ -523,10 +577,62 @@ Date:   Fri Sep 1 7:52:20 2017 -0400
 	</section>
 
 	<section class="slide">
-			<figure>
-				<img class="cover" src="pictures/yolo.png" style="max-height: 70%;">
-			</figure>
-		</section>
+		<h2>Rebase Feature Branch</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git rebase master</span></code>
+			<div class="next">
+				<code><div class="output">First, rewinding head to replay your work on top of it...
+Applying: Add blank README.md
+Applying: Add header to README
+Applying: Add copyright to README
+Applying: Add year to README
+Applying: Add company name to README</code></div>
+				<code><br /></code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Rebase Diagram</h2>
+		<pre style="height: 85%">
+			<code><span class="prompt"># Before rebase</span></code>
+			<code>1--2--3--4         master
+		|
+		+--5--6        feature</code>
+			<code><br /></code>
+			<div class="next">
+				<code><span class="prompt"># After rebase</span></code>
+				<code>1--2--3--4--5'-6'  feature</code>
+			</div>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Interactive Rebase 🐶🕶</h2>
+		<pre>
+			<code><span class="dir">~/code/awesome-project</span> <span class="vcstatus">add-readme</span></code>
+			<code><span class="prompt">⚡</span> <span class="command">git rebase master -i</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/rebase-interactive-before.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover window" src="pictures/rebase-interactive-after.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/yolo.png" style="max-height: 70%;">
+		</figure>
+	</section>
 
 	<section class="slide">
 		<h2>Rebase Before Merge</h2>
@@ -554,6 +660,12 @@ Fast-forward
 	1 file changed, 537 insertions(+)
 			</code></div>
 		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/github-merge-rebase.png" style="max-width: 80%;">
+		</figure>
 	</section>
 
 	<section class="slide">
@@ -666,11 +778,12 @@ CommitDate: Tue Oct 10 10:57:52 2017 -0400
 				<li>Use <code>git merge --no-ff</code> to keep them under one umbrella. ☂️</li>
 			</ul></li>
 			<li class="next"><code>git log</code> is a lie. 🎂<ul>
-				<li>Use <code>git log --graph</code> to see the whole picture! 📈</li>
+				<li>Use <code>git log --graph</code> to see the whole picture. 📈</li>
 			</ul></li>
-			<li class="next"><code>git rebase</code> leaves commit timestamps out of sorts. 🔁<ul>
-				<li>Use <code>git rebase --ignore-dates</code> to get them in order! 👌🏻</li>
+			<li class="next"><code>git rebase</code> leaves author timestamps out of sorts. 🔁<ul>
+				<li>Use <code>git rebase --ignore-dates</code> to put them in order. 👌🏻</li>
 			</ul></li>
+			<li class="next"><code>git rebase -i</code> does everything else you could possibly want. 😌</li>
 		</ul>
 	</section>
 
